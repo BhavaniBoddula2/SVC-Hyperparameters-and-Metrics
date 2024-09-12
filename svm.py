@@ -11,7 +11,7 @@ from mlxtend.plotting import plot_decision_regions
 
 # Title and file uploader
 st.title("Support Vector Classifier Hyperparameters and Metrics")
-
+st.image("OIP (6).jpg", width=400)
 uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
 
 if uploaded_file is not None:
