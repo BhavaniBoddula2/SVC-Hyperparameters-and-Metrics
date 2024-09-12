@@ -10,7 +10,7 @@ from mlxtend.plotting import plot_decision_regions
 
 
 # Title and file uploader
-st.title("Support Vector Classifier Hyperparameters and Metrics")
+st.title("Support Vector Machine Hyperparameters and Metrics on Dynamic Dataset ")
 st.image("OIP (6).jpg", width=400)
 uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
 
@@ -24,8 +24,8 @@ if uploaded_file is not None:
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
     # Sidebar for hyperparameter inputs
-
-    # Logistic Regression hyperparameters
+    st.write("### Hyperparameters")
+    # SVM  hyperparameters
     C_value = st.sidebar.slider("Inverse of regularization strength (C)", 0.01, 10.0, 1.0)
     kernel = st.sidebar.selectbox("kernel", ('linear', 'poly', 'rbf', 'sigmoid', 'precomputed'))
     gamma = st.sidebar.selectbox("Kernel coefficient for 'rbf', 'poly' and 'sigmoid'- gamma", ('scale', 'auto'))
@@ -39,7 +39,7 @@ if uploaded_file is not None:
 
 
 
-    # Support Vector Classifier model with hyperparameters from sidebar
+    # Support Vector Machine model with hyperparameters from sidebar
     model = SVC(        
         C=C_value,
         kernel=kernel,
@@ -88,10 +88,10 @@ if uploaded_file is not None:
         st.write(f"F1 Score: {f1:.4f}")
 
     # Plot decision surface
-    st.write("### Decision Surface for Support Vector Classifier")
+    st.write("### Decision Surface for Support Vector Machine")
     plt.figure(figsize=(8, 6))
     plot_decision_regions(X_train.to_numpy(), y_train.to_numpy(), clf=model, legend=2)
-    plt.title('Decision Surface for Support Vector Classifier')
+    plt.title('Decision Surface for Support Vector Machine')
     plt.xlabel('Feature 1')
     plt.ylabel('Feature 2')
     st.pyplot(plt)
