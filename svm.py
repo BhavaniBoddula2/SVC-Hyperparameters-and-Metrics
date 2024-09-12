@@ -10,7 +10,7 @@ from mlxtend.plotting import plot_decision_regions
 
 
 # Title and file uploader
-st.title("Support Vector Machine Hyperparameters and Metrics on Dynamic Dataset ")
+st.title("Support Vector Machine Hyperparameteric tuning and Metrics on Dynamic Dataset ")
 st.image("OIP (6).jpg", width=400)
 uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
 
